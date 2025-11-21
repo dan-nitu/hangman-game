@@ -22,6 +22,10 @@ $gradient-3: linear-gradient(180deg, #fe71fe 16%, #7199ff 100%);
 $gradient-4: linear-gradient(180deg, #ff95ff 0%, #a3aeff 100%);
 $gradient-5: linear-gradient(180deg, #1a043a 0%, #151278 70%, #2b1677 100%);
 
+// BREAKPOINTS
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
 // SPACING
 $spacing-0: 0;
 $spacing-100: 8px;

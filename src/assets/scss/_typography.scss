@@ -1,4 +1,5 @@
-$font-house-memoirs: 'House Memoirs', sans-serif;
+@use 'sass:map';
+@use 'sass:list';
 
 $text-presets: (
   1: (
@@ -64,14 +65,13 @@ $text-presets: (
 );
 
 @mixin text-preset($preset-number) {
-  $preset: map-get($text-presets, $preset-number);
+  $preset: map.get($text-presets, $preset-number);
 
   @if $preset == null {
     @error "Text preset #{$preset-number} does not exist.";
   }
 
-  font-family: $font-house-memoirs;
-  font-size: nth($preset, 1);
-  line-height: nth($preset, 2);
-  letter-spacing: nth($preset, 3);
+  font-size: list.nth($preset, 1);
+  line-height: list.nth($preset, 2);
+  letter-spacing: list.nth($preset, 3);
 }
