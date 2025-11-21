@@ -1,0 +1,77 @@
+$font-house-memoirs: 'House Memoirs', sans-serif;
+
+$text-presets: (
+  1: (
+    136px,
+    120%,
+    -1px,
+  ),
+  2: (
+    104px,
+    120%,
+    -1px,
+  ),
+  3: (
+    94px,
+    120%,
+    -1px,
+  ),
+  4: (
+    88px,
+    120%,
+    0px,
+  ),
+  5: (
+    64px,
+    120%,
+    2.5px,
+  ),
+  6: (
+    48px,
+    120%,
+    2.5px,
+  ),
+  7: (
+    40px,
+    120%,
+    1.75px,
+  ),
+  8: (
+    32px,
+    120%,
+    1.75px,
+  ),
+  9: (
+    26px,
+    120%,
+    0.75px,
+  ),
+  10: (
+    24px,
+    120%,
+    0.75px,
+  ),
+  11: (
+    20px,
+    120%,
+    0.75px,
+  ),
+  12: (
+    16px,
+    120%,
+    0.75px,
+  ),
+);
+
+@mixin text-preset($preset-number) {
+  $preset: map-get($text-presets, $preset-number);
+
+  @if $preset == null {
+    @error "Text preset #{$preset-number} does not exist.";
+  }
+
+  font-family: $font-house-memoirs;
+  font-size: nth($preset, 1);
+  line-height: nth($preset, 2);
+  letter-spacing: nth($preset, 3);
+}
