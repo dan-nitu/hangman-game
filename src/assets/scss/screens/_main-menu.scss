@@ -1,0 +1,32 @@
+@use '../variables' as *;
+@use '../typography' as *;
+
+.main-menu-screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 58px;
+
+  margin-inline: 26px;
+  padding-inline: 30px;
+  padding-bottom: 64px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 50px 0 0 0;
+    z-index: -1;
+
+    background: $gradient-1;
+    box-shadow:
+      inset 0px -8px 0px 4px #140e66,
+      inset 0px 6px 0px 8px $blue-600;
+    border-radius: $radius-48;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}

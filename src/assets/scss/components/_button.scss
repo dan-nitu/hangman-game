@@ -4,6 +4,7 @@
 .button {
   color: $neutral-0;
   width: fit-content;
+  text-transform: uppercase;
 
   &.play {
     display: flex;
@@ -96,7 +97,11 @@
     }
 
     background: $gradient-3;
-    box-shadow: inset 0px -6px 0px 7px rgba(157, 45, 245, 0.25);
+    box-shadow: inset 0px -5px 0px -1px rgba(157, 45, 245, 0.25);
+    @media (min-width: $breakpoint-tablet) {
+      box-shadow: inset 0px -6px 0px 7px rgba(157, 45, 245, 0.25);
+    }
+
     border-radius: $radius-full;
 
     &:hover {

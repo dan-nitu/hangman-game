@@ -1,0 +1,31 @@
+@use '../variables' as *;
+@use '../typography' as *;
+
+.card {
+  padding: 32px;
+
+  background: $neutral-0;
+  border-radius: $radius-20;
+
+  display: grid;
+  gap: 16px;
+
+  .header {
+    @include text-preset(10);
+    text-transform: uppercase;
+    display: flex;
+    gap: 16px;
+
+    span {
+      color: $blue-600;
+    }
+    h2 {
+      color: $indigo-600;
+    }
+  }
+
+  p {
+    @include text-preset(12);
+    color: $indigo-400;
+  }
+}

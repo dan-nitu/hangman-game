@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, computed } from 'vue'
+import { defineProps, inject } from 'vue'
 
 const props = defineProps({
   changeState: {
@@ -14,13 +14,17 @@ const props = defineProps({
   },
 })
 
-const link = computed(() => {
-  return props.variant === 'play' ? '/play-category' : props.to
-})
+const screenState = inject('screenState')
+
+const changeScreenState = () => {
+  if (props.changeState) {
+    screenState.value = props.changeState
+  }
+}
 </script>
 
 <template>
-  <div :class="['button', props.variant]">
+  <div :class="['button', props.variant]" @click="changeScreenState">
     <img v-if="props.variant === 'play'" src="../assets/images/icon-play.png" alt="play-button" />
     <img
       v-else-if="props.variant === 'back'"
