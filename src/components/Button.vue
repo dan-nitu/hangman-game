@@ -1,11 +1,10 @@
 <script setup>
 import { defineProps, computed } from 'vue'
-import { RouterLink } from 'vue-router'
 
 const props = defineProps({
-  to: {
+  changeState: {
     type: String,
-    default: '/',
+    default: '',
   },
   variant: {
     type: String,
@@ -21,7 +20,7 @@ const link = computed(() => {
 </script>
 
 <template>
-  <RouterLink :to="link" :class="['button', props.variant]">
+  <div :class="['button', props.variant]">
     <img v-if="props.variant === 'play'" src="../assets/images/icon-play.png" alt="play-button" />
     <img
       v-else-if="props.variant === 'back'"
@@ -34,5 +33,5 @@ const link = computed(() => {
       alt="back-button"
     />
     <slot v-else />
-  </RouterLink>
+  </div>
 </template>
