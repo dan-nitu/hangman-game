@@ -9,4 +9,6 @@ import Button from '@/components/Button.vue'
   <Button variant="primary" to="#">how to play</Button>
   <Button variant="secondary" to="#">quit game</Button>
   <Button variant="category" to="#">category</Button>
+  <Button variant="back" to="#">category</Button>
+  <Button variant="menu" to="#">category</Button>
 </template>

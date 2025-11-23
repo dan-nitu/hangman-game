@@ -77,4 +77,54 @@
       background: $blue-500;
     }
   }
+
+  &.back,
+  &.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    aspect-ratio: 1/1;
+
+    @media (min-width: $breakpoint-tablet) {
+      width: 64px;
+    }
+    @media (min-width: $breakpoint-desktop) {
+      width: 94px;
+    }
+
+    background: $gradient-3;
+    box-shadow: inset 0px -6px 0px 7px rgba(157, 45, 245, 0.25);
+    border-radius: $radius-full;
+
+    &:hover {
+      background: $gradient-4;
+    }
+  }
+
+  &.back {
+    img {
+      height: 16px;
+
+      @media (min-width: $breakpoint-tablet) {
+        height: 26px;
+      }
+      @media (min-width: $breakpoint-desktop) {
+        height: 38px;
+      }
+    }
+  }
+  &.menu {
+    img {
+      height: 14px;
+
+      @media (min-width: $breakpoint-tablet) {
+        height: 22px;
+      }
+      @media (min-width: $breakpoint-desktop) {
+        height: 32px;
+      }
+    }
+  }
 }
