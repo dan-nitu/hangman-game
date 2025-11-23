@@ -6,7 +6,7 @@ import Button from '../Button.vue'
   <div class="main-menu-screen">
     <img src="../../assets/images/logo.svg" alt="" />
 
-    <Button variant="play" />
+    <Button variant="play" changeState="pick-a-category" />
     <Button variant="primary" changeState="how-to-play">how to play</Button>
   </div>
 </template>

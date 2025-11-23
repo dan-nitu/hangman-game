@@ -2,23 +2,32 @@
 import { defineProps, inject } from 'vue'
 
 const props = defineProps({
-  changeState: {
-    type: String,
-    default: '',
-  },
   variant: {
     type: String,
     default: 'primary',
     validator: (value) =>
       ['primary', 'secondary', 'play', 'category', 'back', 'menu'].includes(value),
   },
+  changeState: {
+    type: String,
+    default: '',
+  },
+  category: {
+    type: String,
+    default: '',
+  },
 })
 
 const screenState = inject('screenState')
+const gameCategory = inject('gameCategory')
 
 const changeScreenState = () => {
   if (props.changeState) {
     screenState.value = props.changeState
+
+    if (props.variant === 'category') {
+      gameCategory.value = props.category
+    }
   }
 }
 </script>

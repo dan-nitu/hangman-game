@@ -29,3 +29,9 @@ body,
   display: flex;
   align-items: center;
 }
+
+#app > *:not(.main-menu-screen) {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}

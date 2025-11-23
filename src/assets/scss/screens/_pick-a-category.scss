@@ -1,9 +1,11 @@
 @use '../variables' as *;
 @use '../typography' as *;
 
-.how-to-play-screen {
+.pick-a-category-screen {
+  width: 100%;
   position: relative;
-  gap: 80px;
+  display: grid;
+  gap: 100px;
   padding: 32px 25px;
 
   &::before {
@@ -15,8 +17,9 @@
     opacity: 0.75;
   }
 
-  .cards-wrapper {
+  .category-list {
     display: grid;
-    gap: 24px;
+    gap: 16px;
+    grid-template-columns: 1fr;
   }
 }
