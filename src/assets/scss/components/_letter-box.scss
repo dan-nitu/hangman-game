@@ -1,0 +1,12 @@
+@use '../variables' as *;
+@use '../typography' as *;
+
+.letter-box {
+  padding: 13px 46px;
+  width: fit-content;
+
+  background: $neutral-0;
+  border-radius: $radius-24;
+  @include text-preset(6);
+  color: $indigo-600;
+}

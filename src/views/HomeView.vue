@@ -1,5 +1,6 @@
 <script setup>
 import Button from '@/components/Button.vue'
+import LetterBox from '@/components/LetterBox.vue'
 </script>
 
 <template>
@@ -11,4 +12,6 @@ import Button from '@/components/Button.vue'
   <Button variant="category" to="#">category</Button>
   <Button variant="back" to="#">category</Button>
   <Button variant="menu" to="#">category</Button>
+
+  <LetterBox letter="A" />
 </template>
