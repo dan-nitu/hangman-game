@@ -7,12 +7,17 @@ defineProps({
     type: String,
     required: true,
   },
+  game: {
+    type: Boolean,
+    default: false,
+  },
 })
 </script>
 
 <template>
   <header>
-    <Button variant="back" changeState="main-menu" />
+    <Button v-if="game" variant="menu" />
+    <Button v-else="game" variant="back" changeState="main-menu" />
     <h1>{{ title }}</h1>
   </header>
 </template>

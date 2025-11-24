@@ -1,0 +1,42 @@
+@use '../variables' as *;
+@use '../typography' as *;
+
+.health {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+  .healthbar {
+    padding: 4px;
+    width: 57px;
+    height: 16px;
+
+    background: $neutral-0;
+    border-radius: $radius-96;
+
+    .healthbar-fill {
+      width: 100%;
+      height: 8px;
+
+      background: $gradient-4;
+      border-radius: $radius-96;
+
+      background: $indigo-600;
+      border-radius: $radius-96;
+
+      @mixin generate-lives($lives) {
+        @for $n from 0 through $lives {
+          &.lives-#{$lives - $n} {
+            $percent: calc(100 - (calc($n * calc(100 / $lives))));
+            width: $percent * 1%;
+          }
+        }
+      }
+      @include generate-lives(8);
+    }
+  }
+
+  img {
+    height: 24px;
+  }
+}

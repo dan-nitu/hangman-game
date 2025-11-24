@@ -1,0 +1,23 @@
+@use '../variables' as *;
+@use '../typography' as *;
+
+.game-screen {
+  position: relative;
+  gap: 80px;
+  padding: 46px 25px;
+  width: 100%;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: $gradient-5;
+    opacity: 0.75;
+  }
+
+  .header-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}

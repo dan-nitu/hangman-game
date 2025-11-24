@@ -7,9 +7,11 @@
 @use 'components/button';
 @use 'components/letter-box';
 @use 'components/card';
+@use 'components/health';
 
 @use 'components/header';
 
 @use 'screens/main-menu';
 @use 'screens/how-to-play';
 @use 'screens/pick-a-category';
+@use 'screens/game';
