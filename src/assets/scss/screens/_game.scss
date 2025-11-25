@@ -20,4 +20,9 @@
     display: flex;
     justify-content: space-between;
   }
+
+  .game {
+    display: grid;
+    gap: 120px;
+  }
 }

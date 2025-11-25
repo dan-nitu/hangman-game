@@ -4,6 +4,7 @@ import data from '@/data/data.json'
 
 import Header from '../Header.vue'
 import Health from '../Health.vue'
+import Keyboard from '../Keyboard.vue'
 
 const { gameCategory } = defineProps({
   gameCategory: {
@@ -41,6 +42,9 @@ if (categoryArray && categoryArray.length > 0) {
     <div class="header-wrapper">
       <Header :title="gameCategory" :game="true" />
       <Health :livesNumber="livesNumber" />
+    </div>
+    <div class="game">
+      <Keyboard />
     </div>
     <p>Random word: {{ randomWord?.name }}</p>
   </div>

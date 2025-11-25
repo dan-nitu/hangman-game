@@ -6,9 +6,13 @@ defineProps({
     type: String,
     required: true,
   },
+  active: {
+    type: Boolean,
+    default: true,
+  },
 })
 </script>
 
 <template>
-  <div class="letter-box">{{ letter }}</div>
+  <button class="letter-box" :disabled="!active">{{ letter }}</button>
 </template>
