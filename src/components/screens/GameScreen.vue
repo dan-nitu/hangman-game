@@ -4,6 +4,8 @@ import data from '@/data/data.json'
 
 import Header from '../Header.vue'
 import Health from '../Health.vue'
+
+import Word from '../Word.vue'
 import Keyboard from '../Keyboard.vue'
 
 const { gameCategory } = defineProps({
@@ -44,8 +46,8 @@ if (categoryArray && categoryArray.length > 0) {
       <Health :livesNumber="livesNumber" />
     </div>
     <div class="game">
+      <Word :word="randomWord?.name" />
       <Keyboard />
     </div>
-    <p>Random word: {{ randomWord?.name }}</p>
   </div>
 </template>
