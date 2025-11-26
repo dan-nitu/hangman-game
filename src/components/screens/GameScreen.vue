@@ -19,6 +19,8 @@ const livesNumber = ref(8)
 const wordsPool = ref(data)
 const randomWord = ref(null)
 
+const guessedLetters = ref([])
+
 const categoryArray = wordsPool.value[gameCategory]
 
 if (categoryArray && categoryArray.length > 0) {
@@ -37,6 +39,11 @@ if (categoryArray && categoryArray.length > 0) {
 } else {
   console.error(`Category "${gameCategory}" does not exist.`)
 }
+
+function handleKeyboardPress(letter) {
+  guessedLetters.value.push(letter)
+  console.log(guessedLetters)
+}
 </script>
 
 <template>
@@ -46,8 +53,8 @@ if (categoryArray && categoryArray.length > 0) {
       <Health :livesNumber="livesNumber" />
     </div>
     <div class="game">
-      <Word :word="randomWord?.name" />
-      <Keyboard />
+      <Word :word="randomWord?.name" :guessedLetters="guessedLetters" />
+      <Keyboard @pressed="handleKeyboardPress" />
     </div>
   </div>
 </template>

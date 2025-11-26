@@ -15,5 +15,5 @@ defineProps({
 </script>
 
 <template>
-  <div class="word-letter">{{ revealed ? letter : '' }}</div>
+  <div :class="`word-letter ${letter === ' ' ? 'space' : ''}`">{{ revealed ? letter : '' }}</div>
 </template>

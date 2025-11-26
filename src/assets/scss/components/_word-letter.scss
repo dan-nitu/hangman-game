@@ -23,4 +23,9 @@
   &:empty {
     opacity: 25%;
   }
+
+  &.space {
+    background: transparent;
+    box-shadow: none;
+  }
 }
