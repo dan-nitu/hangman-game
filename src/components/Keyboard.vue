@@ -33,6 +33,6 @@ const letters = [
 
 <template>
   <div class="keyboard">
-    <LetterBox v-for="letter in letters" :letter="letter" />
+    <LetterBox v-for="letter in letters" :letter="letter" :key="letter" />
   </div>
 </template>
