@@ -27,6 +27,7 @@ const changeScreenState = () => {
 
     if (props.variant === 'category') {
       game.setCategory(props.category)
+      game.setWord()
     }
   }
 }

@@ -16,9 +16,7 @@ const emit = defineEmits(['pressed'])
 
 const letterClick = () => {
   isActive.value = false
-  game.addLetter(letter)
-
-  console.log(game.guessedLetters)
+  game.checkLetter(letter)
 }
 </script>
 
