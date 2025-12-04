@@ -29,16 +29,10 @@ const letters = [
   'y',
   'z',
 ]
-
-const emit = defineEmits(['pressed'])
-
-function onLetterPressed(letter) {
-  emit('pressed', letter)
-}
 </script>
 
 <template>
   <div class="keyboard">
-    <LetterBox v-for="letter in letters" :letter="letter" @pressed="onLetterPressed" />
+    <LetterBox v-for="letter in letters" :letter="letter" />
   </div>
 </template>

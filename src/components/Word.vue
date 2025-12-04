@@ -1,31 +1,40 @@
 <script setup>
 import { defineProps, computed } from 'vue'
+import { useGameStore } from '@/stores/game'
+
 import WordLetter from './WordLetter.vue'
 
-const { word, guessedLetters } = defineProps({
+const game = useGameStore()
+
+const { word } = defineProps({
   word: {
     type: String,
     required: true,
   },
-  guessedLetters: {
-    type: Array,
-    default: [],
-  },
 })
 
-const normalizedWord = computed(
-  () => word.toLowerCase().replace(/[^a-z]/g, ''), // remove anything that's not a–z
+const normalizedWords = computed(
+  () =>
+    word
+      .toLowerCase()
+      .replace(/[^a-z ]/g, '') // keep letters + spaces
+      .split(' ') // split into words
+      .filter((w) => w.length) // remove double-spaces
+      .map((w) => w.split('')), // split each word into letters
 )
 </script>
 
 <template>
   <div class="word">
-    <WordLetter
-      v-for="(letter, index) in normalizedWord.split('')"
-      :key="index"
-      :letter="letter"
-      :revealed="guessedLetters.includes(letter)"
-    />
-    {{ word }} - {{ guessedLetters }} - {{ normalizedWord }}
+    <div class="word-wrapper" v-for="(wordLetters, index) in normalizedWords" :key="index">
+      <WordLetter
+        v-for="(letter, index) in wordLetters"
+        :key="index"
+        :letter="letter"
+        :revealed="game.guessedLetters.includes(letter)"
+      />
+    </div>
   </div>
+
+  {{ word }} - {{ game.guessedLetters }} - {{ normalizedWords }}
 </template>

@@ -1,5 +1,8 @@
 <script setup>
-import { defineProps, inject } from 'vue'
+import { defineProps } from 'vue'
+import { useGameStore } from '@/stores/game'
+
+const game = useGameStore()
 
 const props = defineProps({
   variant: {
@@ -18,15 +21,12 @@ const props = defineProps({
   },
 })
 
-const screenState = inject('screenState')
-const gameCategory = inject('gameCategory')
-
 const changeScreenState = () => {
   if (props.changeState) {
-    screenState.value = props.changeState
+    game.setScreen(props.changeState)
 
     if (props.variant === 'category') {
-      gameCategory.value = props.category
+      game.setCategory(props.category)
     }
   }
 }

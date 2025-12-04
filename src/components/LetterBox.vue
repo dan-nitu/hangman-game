@@ -1,5 +1,8 @@
 <script setup>
+import { useGameStore } from '@/stores/game'
 import { defineProps, ref } from 'vue'
+
+const game = useGameStore()
 
 const { letter } = defineProps({
   letter: {
@@ -11,14 +14,16 @@ const { letter } = defineProps({
 const isActive = ref(true)
 const emit = defineEmits(['pressed'])
 
-const handleClick = () => {
+const letterClick = () => {
   isActive.value = false
-  emit('pressed', letter)
+  game.addLetter(letter)
+
+  console.log(game.guessedLetters)
 }
 </script>
 
 <template>
-  <button class="letter-box" :disabled="!isActive" @click="handleClick">
+  <button class="letter-box" :disabled="!isActive" @click="letterClick">
     {{ letter }}
   </button>
 </template>

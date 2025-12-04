@@ -2,5 +2,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 12px 8px;
+
+  gap: 12px 40px;
+
+  .word-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 12px 8px;
+  }
 }
