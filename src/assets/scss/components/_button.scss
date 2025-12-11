@@ -25,8 +25,10 @@
       inset 0px -12px 0px 11px #9d2df5;
     border-radius: $radius-full;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       background: $gradient-4;
+      outline: transparent;
     }
 
     img {
@@ -51,8 +53,10 @@
       inset 0px -2px 0px 3px #140e66,
       inset 0px 1px 0px 6px #3c74ff;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       background: $blue-500;
+      outline: transparent;
     }
   }
 
@@ -62,8 +66,10 @@
       inset 0px -2px 0px 3px #140e66,
       inset 0px 1px 0px 6px #c642fb;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       background: $gradient-4;
+      outline: transparent;
     }
   }
 
@@ -76,8 +82,10 @@
     border-radius: $radius-20;
     @include text-preset(10);
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       background: $blue-500;
+      outline: transparent;
     }
   }
 
@@ -105,8 +113,10 @@
 
     border-radius: $radius-full;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       background: $gradient-4;
+      outline: transparent;
     }
   }
 

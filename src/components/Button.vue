@@ -38,7 +38,7 @@ const changeScreenState = () => {
 </script>
 
 <template>
-  <div :class="['button', props.variant]" @click="changeScreenState">
+  <button :class="['button', props.variant]" @click="changeScreenState">
     <img v-if="props.variant === 'play'" src="../assets/images/icon-play.png" alt="play-button" />
     <img
       v-else-if="props.variant === 'back'"
@@ -51,5 +51,5 @@ const changeScreenState = () => {
       alt="menu-button"
     />
     <slot v-else />
-  </div>
+  </button>
 </template>

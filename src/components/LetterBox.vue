@@ -23,7 +23,7 @@ const activateLetter = () => {
 const letterClick = () => activateLetter()
 
 const handleKey = (e) => {
-  if (e.key.toLowerCase() === letter.toLowerCase()) {
+  if (e.key.toLowerCase() === letter.toLowerCase() && !game.gameStatus) {
     activateLetter()
   }
 }
@@ -49,7 +49,7 @@ watch(
 </script>
 
 <template>
-  <button class="letter-box" :disabled="!isActive" @click="letterClick">
+  <button tabindex="-1" class="letter-box" :disabled="!isActive" @click="letterClick">
     {{ letter }}
   </button>
 </template>

@@ -17,6 +17,4 @@ const game = useGameStore()
       />
     </div>
   </div>
-
-  {{ game.word }} - {{ game.guessedLetters }} - {{ game.normalizeWord }}
 </template>
