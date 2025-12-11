@@ -30,6 +30,10 @@ const changeScreenState = () => {
       game.setWord()
     }
   }
+
+  if (props.variant === 'menu') {
+    game.setGameStatus('Paused')
+  }
 }
 </script>
 
@@ -44,7 +48,7 @@ const changeScreenState = () => {
     <img
       v-else-if="props.variant === 'menu'"
       src="../assets/images/icon-menu.svg"
-      alt="back-button"
+      alt="menu-button"
     />
     <slot v-else />
   </div>

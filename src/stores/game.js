@@ -8,8 +8,9 @@ export const useGameStore = defineStore('game', {
     category: '',
     word: '',
     lives: 8,
+    wordLetters: [],
     guessedLetters: [],
-    gameStatus: '',
+    gameStatus: '', // Paused - You Lose - You Win
   }),
 
   getters: {
@@ -28,6 +29,9 @@ export const useGameStore = defineStore('game', {
     },
     setCategory(value) {
       this.category = value
+    },
+    setGameStatus(value) {
+      this.gameStatus = value
     },
     setWord() {
       const pool = this.wordsPool[this.category]
@@ -55,6 +59,7 @@ export const useGameStore = defineStore('game', {
 
       // store the game word
       this.word = chosen.name
+      this.wordLetters = this.word.toLowerCase().replace(/\s+/g, '').split('')
     },
     checkLetter(value) {
       // take the normalized word and make 1 array
@@ -70,6 +75,28 @@ export const useGameStore = defineStore('game', {
       }
 
       this.guessedLetters.push(value)
+    },
+    checkWin() {
+      if (this.wordLetters.every((letter) => this.guessedLetters.includes(letter))) {
+        this.gameStatus = 'You Win'
+      }
+    },
+    resetGameStatus() {
+      this.gameStatus = ''
+    },
+    resetWord() {
+      this.setWord()
+      this.lives = 8
+      this.guessedLetters = []
+      this.gameStatus = ''
+    },
+    resetGame() {
+      this.category = ''
+      this.word = ''
+      this.lives = 8
+      this.wordLetters = []
+      this.guessedLetters = []
+      this.gameStatus = ''
     },
   },
 })
