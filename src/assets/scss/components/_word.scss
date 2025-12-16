@@ -1,3 +1,5 @@
+@use '../variables' as *;
+
 .word {
   display: flex;
   flex-wrap: wrap;
@@ -11,5 +13,12 @@
     justify-content: center;
 
     gap: 12px 8px;
+
+    @media (min-width: $breakpoint-tablet) {
+      gap: 16px 12px;
+    }
+    @media (min-width: $breakpoint-desktop) {
+      gap: 16px;
+    }
   }
 }

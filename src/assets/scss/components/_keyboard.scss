@@ -1,5 +1,14 @@
+@use '../variables' as *;
+
 .keyboard {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
   gap: 24px 8px;
+
+  @media (min-width: $breakpoint-tablet) {
+    gap: 24px 16px;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    gap: 24px;
+  }
 }

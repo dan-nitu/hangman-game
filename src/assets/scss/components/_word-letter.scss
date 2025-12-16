@@ -20,6 +20,19 @@
   text-transform: uppercase;
   color: $neutral-0;
 
+  @media (min-width: $breakpoint-tablet) {
+    border-radius: $radius-32;
+    @include text-preset(5);
+    width: 88px;
+    height: 112px;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    border-radius: $radius-40;
+    @include text-preset(4);
+    width: 112px;
+    height: 128px;
+  }
+
   &:empty {
     opacity: 25%;
   }

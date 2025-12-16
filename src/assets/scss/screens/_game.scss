@@ -7,6 +7,15 @@
   padding: 46px 25px;
   width: 100%;
 
+  @media (min-width: $breakpoint-tablet) {
+    gap: 114px;
+    padding: 60px 48px 112px 48px;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    gap: 150px;
+    padding: 80px 112px 200px 112px;
+  }
+
   &::before {
     content: '';
     position: absolute;
