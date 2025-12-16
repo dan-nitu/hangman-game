@@ -7,7 +7,7 @@ const categories = ['movies', 'tv shows', 'countries', 'capital cities', 'animal
 
 <template>
   <div class="pick-a-category-screen">
-    <Header title="pick a category" />
+    <Header title="Pick a Category" />
 
     <div class="category-list">
       <Button

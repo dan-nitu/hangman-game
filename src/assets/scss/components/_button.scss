@@ -82,6 +82,15 @@
     border-radius: $radius-20;
     @include text-preset(10);
 
+    @media (min-width: $breakpoint-tablet) {
+      padding: 62px 12px;
+      @include text-preset(6);
+      border-radius: $radius-40;
+    }
+    @media (min-width: $breakpoint-desktop) {
+      padding-block: 66px;
+    }
+
     &:hover,
     &:focus-visible {
       background: $blue-500;
