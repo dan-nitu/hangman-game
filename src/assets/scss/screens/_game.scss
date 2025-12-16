@@ -7,6 +7,10 @@
   padding: 46px 25px;
   width: 100%;
 
+  * {
+    text-transform: uppercase;
+  }
+
   @media (min-width: $breakpoint-tablet) {
     gap: 114px;
     padding: 60px 48px 112px 48px;

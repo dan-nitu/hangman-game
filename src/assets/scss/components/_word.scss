@@ -7,6 +7,13 @@
 
   gap: 12px 40px;
 
+  @media (min-width: $breakpoint-tablet) {
+    gap: 16px 100px;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    gap: 16px 144px;
+  }
+
   .word-wrapper {
     display: flex;
     flex-wrap: wrap;

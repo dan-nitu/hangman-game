@@ -20,6 +20,15 @@
     opacity: 0.75;
   }
 
+  header {
+    button {
+      @media (min-width: $breakpoint-tablet) {
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+
   .cards-wrapper {
     display: grid;
     gap: 24px;

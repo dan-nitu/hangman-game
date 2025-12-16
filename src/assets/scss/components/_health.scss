@@ -6,10 +6,23 @@
   gap: 16px;
   align-items: center;
 
+  @media (min-width: $breakpoint-tablet) {
+    gap: 40px;
+  }
+
   .healthbar {
     padding: 4px;
     width: 57px;
     height: 16px;
+
+    @media (min-width: $breakpoint-tablet) {
+      padding: 9px 11px;
+      height: 31px;
+      width: 160px;
+    }
+    @media (min-width: $breakpoint-desktop) {
+      width: 240px;
+    }
 
     background: $neutral-0;
     border-radius: $radius-96;
@@ -18,11 +31,13 @@
       width: 100%;
       height: 8px;
 
+      @media (min-width: $breakpoint-tablet) {
+        height: 13px;
+      }
+
       background: $gradient-4;
       border-radius: $radius-96;
-
       background: $indigo-600;
-      border-radius: $radius-96;
 
       @mixin generate-lives($lives) {
         @for $n from 0 through $lives {
@@ -38,5 +53,9 @@
 
   img {
     height: 24px;
+
+    @media (min-width: $breakpoint-tablet) {
+      height: 50px;
+    }
   }
 }

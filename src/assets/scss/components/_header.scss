@@ -10,13 +10,10 @@ header {
 
   @media (min-width: $breakpoint-tablet) {
     justify-content: center;
+    gap: 32px;
   }
-
-  button {
-    @media (min-width: $breakpoint-tablet) {
-      position: absolute;
-      left: 0;
-    }
+  @media (min-width: $breakpoint-desktop) {
+    gap: 56px;
   }
 
   h1 {
@@ -52,6 +49,13 @@ header {
       -webkit-text-fill-color: unset;
       background-clip: unset;
       filter: none;
+
+      @media (min-width: $breakpoint-tablet) {
+        @include text-preset(6);
+      }
+      @media (min-width: $breakpoint-desktop) {
+        @include text-preset(4);
+      }
     }
   }
 }
