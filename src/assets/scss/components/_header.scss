@@ -6,10 +6,31 @@ header {
   justify-content: space-between;
   align-items: center;
   gap: 16px;
+  position: relative;
+
+  @media (min-width: $breakpoint-tablet) {
+    justify-content: center;
+  }
+
+  button {
+    @media (min-width: $breakpoint-tablet) {
+      position: absolute;
+      left: 0;
+    }
+  }
 
   h1 {
     @include text-preset(6);
     text-transform: uppercase;
+
+    @media (min-width: $breakpoint-tablet) {
+      @include text-preset(2);
+      text-align: center;
+      text-transform: none;
+    }
+    @media (min-width: $breakpoint-desktop) {
+      @include text-preset(1);
+    }
 
     background: $gradient-2;
     -webkit-background-clip: text;

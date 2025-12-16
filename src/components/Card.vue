@@ -19,10 +19,8 @@ defineProps({
 
 <template>
   <div class="card">
-    <div class="header">
-      <span>{{ id }}</span>
-      <h2>{{ title }}</h2>
-    </div>
+    <span>{{ id < 10 ? '0' + id : id }}</span>
+    <h2>{{ title }}</h2>
     <p>{{ description }}</p>
   </div>
 </template>

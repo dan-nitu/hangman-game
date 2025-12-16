@@ -6,6 +6,11 @@
   gap: 80px;
   padding: 32px 25px;
 
+  @media (min-width: $breakpoint-tablet) {
+    padding: 48px 40px;
+    gap: 100px;
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -18,5 +23,12 @@
   .cards-wrapper {
     display: grid;
     gap: 24px;
+
+    @media (min-width: $breakpoint-tablet) {
+      gap: 32px;
+    }
+    @media (min-width: $breakpoint-desktop) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }
