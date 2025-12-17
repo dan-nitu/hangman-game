@@ -23,6 +23,9 @@
     content: '';
     position: absolute;
     inset: 50px 0 0 0;
+    @media (min-width: $breakpoint-tablet) {
+      margin-top: 50px;
+    }
     z-index: -1;
 
     background: $gradient-1;
