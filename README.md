@@ -32,7 +32,7 @@ The app is fully responsive and deployed on **Vercel**.
 ## Live Demo
 
 Check out the live site hosted on **Vercel**:  
-[Live Demo]()
+[Live Demo](https://hangman-game-frontend-mentor.vercel.app/)
 
 ## Frontend Mentor Challenge
 
